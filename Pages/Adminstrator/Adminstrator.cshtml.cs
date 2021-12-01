@@ -11,6 +11,7 @@ namespace GamingSiteProject.Adminstrator
     {
         public void OnGet()
         {
+
         }
     }
 }
