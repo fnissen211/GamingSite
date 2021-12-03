@@ -1,3 +1,11 @@
 ﻿@{
-    Layout = "_Layout";
+    if (User.IsInRole("Bruger"))
+    {
+        Layout = "_Layout";
+    }
+    else
+    {
+        Layout = "_LayoutForside";
+    }
+
 }
