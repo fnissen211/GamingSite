@@ -14,12 +14,30 @@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
+            <div class="pb-lg-0" align="center">
+
+                <p>
+                    @Html.TextBox("BrugerID")
+                </p>
+                <p>
+                    @Html.TextBox("Password")
+                </p>
+                <p>
+                    <input class="m-1" id="ButtonLogin" type="button" value="Login" />
+                </p>
+                <p>
+                    <button type="button" class="btn" onclick="window.location.href = '/OpretBruger'">Ingen Bruger?</button>
+                </p>
+
+            </div>
+
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - GamingSiteProject - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            
         </div>
     </footer>
 
