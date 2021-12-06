@@ -10,8 +10,7 @@
 </head>
 <body>
 <header>
-    @if (User.IsInRole("Bruger"))
-    {
+
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">GamingSiteProject</a>
@@ -30,31 +29,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">About Us</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item ml-auto">
                             <a class="nav-link text-dark align-self-xl-end" asp-area="" asp-page="/Privacy">Change Color</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    }
-    else
-    {
-    <div class="container" align="center">
-        <header class="h1">GamingSite</header>
-        <p>
-            @Html.TextBox("BrugerID")
-        </p>
-        <p>
-            @Html.TextBox("Password")
-        </p>
-        <p>
-            <button type="button" id="OpretBruger" class="btn" onclick="window.location.href = '/Login'">Login</button>
-        </p>
-        <p>
-            <button type="button" class="btn" onclick="window.location.href = '/OpretBruger'">Ingen Bruger?</button>
-        </p>
-    </div>
     }
     
 </header>
@@ -66,6 +47,8 @@
         </div>
     </main>
 </div>
+    
+
 
 <footer class="border-top footer text-muted">
     <div class="container">
