@@ -5,12 +5,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GamingSiteProject.data;
 
 namespace GamingSiteProject.Pages
 {
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        private Bruger _bruger;
+
+        public Bruger Bruger
+        {
+            get => _bruger;
+            set => _bruger = value;
+        }
 
         public IndexModel(ILogger<IndexModel> logger)
         {

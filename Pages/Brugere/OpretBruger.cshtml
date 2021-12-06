@@ -1,0 +1,26 @@
+﻿@page
+@model GamingSiteProject.Pages.Brugere.OpretBrugerModel
+@{
+    ViewData["Title"] = "Opret din bruger";
+}
+
+<div class="container">
+    <h1>Opret din bruger</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div class="form-group">
+                    <label>Brugernavn</label>
+                    <input type="text" asp-for="Bruger.Navn" class="form-control" placeholder="Brugernavn" />
+                </div>
+                <div class="form-group">
+                    <label>Kodeord</label>
+                    <input type="text" asp-for="Bruger.Kodeord" class="form-control" placeholder="Kodeord" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Opret Bruger" class="btn btn-primary"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
