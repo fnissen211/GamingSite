@@ -1,9 +1,25 @@
 ﻿@page
 @model GamingSiteProject.Pages.Opret_Bruger.IndexModel
 @{ ViewData["Title"] = "Opret Bruger";
-    
+    Layout = "Shared/_LayoutUser.cshtml";
 }
 
-<h1>@ViewData["Title"]</h1>
-
-<p>Opret din bruger på denne side</p><button type="button" class="btn" onclick="window.location.href = '/OpretBruger'">Ingen Bruger?</button>
+<div class="container" align="center">
+    <header class="h1">Opret ny bruger</header>
+    <p>
+        @Html.TextBox("Mail", null, new {@class = "m-auto", @placeholder = "E-Mail"})
+        
+    </p>
+    <p>
+        @Html.TextBox("BrugerID", null, new { @class = "m-auto", @placeholder = "Bruger-ID" })
+    </p>
+    <p>
+        @Html.TextBox("Password", null, new { @class = "m-auto", @placeholder = "Password" })
+    </p>
+    <p>
+        @Html.TextBox("Number", null, new {@class = "m-auto", @placeholder = "Phone Number" })
+    </p>
+    <p>
+        <button type="button" class="btn" style="border-color: black">Tilmeld dig!</button>
+    </p>
+</div>
