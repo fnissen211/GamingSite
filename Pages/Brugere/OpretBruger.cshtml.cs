@@ -1,3 +1,8 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing.Printing;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using GamingSiteProject.data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -9,14 +14,30 @@ namespace GamingSiteProject.Pages.Brugere
         [BindProperty]
         public Bruger Bruger { get; set; }
 
-        public void OnGet()
+        public List<Bruger> BrugerListe { get; private set; }
+
+        public IActionResult OnGet()
         {
-            //Bruger = new Bruger();
+            
+            
+            return Page();
         }
 
-        public void OnPost()
+        public IActionResult OnPost()
         {
-            string dummy = Bruger.Navn;
+            
+            
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            BrugerListe.Add(Bruger);
+            
+
+
+            return Redirect("/Startside");
+
         }
     }
 }
