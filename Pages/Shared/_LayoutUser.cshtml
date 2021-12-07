@@ -11,7 +11,7 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 own-navbar navbar-light">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">GamingSiteProject</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -30,7 +30,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">About Us</a>
                         </li>
                         <li class="nav-item ml-auto">
-                            <button type="button" onclick="">Change Color</button>
+                            <button type="button" onclick="myFunction()" class="btn btn-secondary">Change Color</button>
                         </li>
                     </ul>
                 </div>
@@ -46,12 +46,20 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - GamingSiteProject - <a asp-area="" asp-page="/Privacy">Privacy</a>
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2021 - GamingSiteProject - <a asp-area="" asp-page="/Privacy">Privacy</a>
 
-        </div>
-    </footer>
+    </div>
+</footer>
+
+<script>
+    function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+        element.classList.toggle("dark-mode-nav");
+    }
+</script>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

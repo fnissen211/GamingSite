@@ -9,3 +9,20 @@
 .background-dark-color {
     background-color: black;
 }
+
+body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+}
+
+.dark-mode {
+    background-color: #313638;
+    color: white;
+}
+
+.own-navbar {
+    background-color: #423e37;
+    color: white;
+}
