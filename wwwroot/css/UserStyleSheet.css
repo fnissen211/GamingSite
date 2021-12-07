@@ -18,20 +18,36 @@ body {
 }
 
 .dark-mode {
-    background-color: #313638;
+    background-color: #23272A;
     color: white;
 }
 
-.own-navbar {
-    background-color: #423e37;
-    border: 1px solid #dedede;
-    border-radius: 4px;
-    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
-    color: #888;
-    display: block;
-    margin: 8px 22px 8px 22px;
-    overflow: hidden;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+.navbar-bg {
+    background-color: #0D0D15;
+}
+
+nav a {
+    color: rgb(135, 135, 135);
+    font-family: Readex Pro, sans-serif;
+    font-size: 17px;
+}
+
+.border-bottom-own {
+    border-bottom: 3px solid rgb(0, 1, 197);
+}
+
+.btn-secondary-own {
+    color: #fff;
+    background-color: #001528;
+    border-color: #001121;
+}
+
+.btn-secondary-own:hover {
+    color: #fff;
+    background-color: #003D6A;
+    border-color: #001121;
+}
+
+.alert-danger-own {
+    color: #721c24;
 }

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GamingSiteProject.services;
 
 namespace GamingSiteProject
 {
@@ -24,6 +25,8 @@ namespace GamingSiteProject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddSingleton<IBrugerListe, BrugerListeJson>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

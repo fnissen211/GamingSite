@@ -1,4 +1,5 @@
 ﻿@page
+@using GamingSiteProject.data
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -21,4 +22,29 @@
 
     </p>
 </div>
+
+<p>@Model.Bruger</p>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Navn</th>
+        <th>Kodeord</th>
+        <th>BrugerType</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (Bruger bruger in @Model.BrugerListe.Bruger)
+        {
+        <tr>
+            <td>@bruger.Id</td>
+            <td>@bruger.Navn</td>
+            <td>@bruger.Kodeord</td>
+            <td>@bruger.Type</td>
+        </tr>
+        }
+    </tbody>
+</table>
 </body>

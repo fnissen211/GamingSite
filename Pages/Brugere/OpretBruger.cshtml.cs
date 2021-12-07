@@ -1,4 +1,6 @@
+using System.Linq;
 using GamingSiteProject.data;
+using GamingSiteProject.services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -6,17 +8,39 @@ namespace GamingSiteProject.Pages.Brugere
 {
     public class OpretBrugerModel : PageModel
     {
+        private IBrugerListe _brugerListe;
+
         [BindProperty]
         public Bruger Bruger { get; set; }
 
-        public void OnGet()
+        public OpretBrugerModel(IBrugerListe brugerListe)
         {
-            //Bruger = new Bruger();
+            _brugerListe = brugerListe;
         }
 
-        public void OnPost()
+        public IActionResult OnGet()
         {
-            string dummy = Bruger.Navn;
+            return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            if (_brugerListe.Bruger.Count == 0)
+            {
+                Bruger.Id = 1;
+            }
+            else
+            {
+                Bruger.Id = _brugerListe.Bruger.Max(b => b.Id) + 1;
+            }
+
+            _brugerListe.AddBruger(Bruger);
+            return RedirectToPage("/Index");
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GamingSiteProject.data;
+using GamingSiteProject.services;
 
 namespace GamingSiteProject.Pages
 {
@@ -13,6 +14,7 @@ namespace GamingSiteProject.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         private Bruger _bruger;
+        private IBrugerListe _brugerListe;
 
         public Bruger Bruger
         {
@@ -20,14 +22,22 @@ namespace GamingSiteProject.Pages
             set => _bruger = value;
         }
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IBrugerListe BrugerListe
         {
-            _logger = logger;
+            get => _brugerListe;
+            set => _brugerListe = value;
         }
 
-        public void OnGet()
+        public IndexModel(ILogger<IndexModel> logger, IBrugerListe brugerListe)
         {
+            _logger = logger;
+            _brugerListe = brugerListe;
+        }
 
+        public IActionResult OnGet()
+        {
+            // _brugerListe = new BrugerListe();
+            return Page();
         }
     }
 }

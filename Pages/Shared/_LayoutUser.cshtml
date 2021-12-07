@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/UserStyleSheet.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Readex+Pro">
 </head>
 <body>
 
@@ -40,8 +41,8 @@
             </div>
         </nav>*@ 
         
-        <nav class="navbar navbar-expand-sm navbar-light bg-light box-shadow mb-3">
-            <a href="#" class="navbar-brand"><img src="~/billeder/logo.png" width="30" height="30" alt=""/> GamingSiteProjekt</a>
+        <nav class="border-bottom-own navbar navbar-expand-sm navbar-bg box-shadow rounded mb-3">
+            <a class="navbar-brand" href="#"><img src="logo.png" alt="..." height="36"/></a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav flex-grow-1">
                     <li class="nav-item">
@@ -57,7 +58,7 @@
                         <a class="nav-link" asp-area="" asp-page="/About Us">About Us</a>
                     </li>
                     <li class="nav-item ml-auto">
-                        <button type="button" onclick="myFunction()" class="btn btn-secondary">Change Color</button>
+                        <button type="button" onclick="myFunction()" class="btn btn-secondary-own">Skift Farve</button>
                     </li>
                 </ul>
             </div>
@@ -83,7 +84,6 @@
     function myFunction() {
         var element = document.body;
         element.classList.toggle("dark-mode");
-        element.classList.toggle("dark-mode-nav");
     }
 </script>
 
