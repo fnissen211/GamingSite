@@ -13,7 +13,7 @@
 body {
     padding: 25px;
     background-color: white;
-    color: black;
+  
     font-size: 25px;
 }
 
@@ -24,5 +24,14 @@ body {
 
 .own-navbar {
     background-color: #423e37;
-    color: white;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+    color: #888;
+    display: block;
+    margin: 8px 22px 8px 22px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
