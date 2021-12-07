@@ -25,6 +25,7 @@ namespace GamingSiteProject.data
         private BrugerType _type;
 
 
+
         public Bruger()
         {
 
