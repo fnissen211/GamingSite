@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace GamingSiteProject.Pages.Opret_Bruger
+namespace GamingSiteProject.Pages
 {
-    public class IndexModel : PageModel
+    public class ProfileModel : PageModel
     {
         public void OnGet()
         {
