@@ -9,6 +9,8 @@ namespace GamingSiteProject.Pages
 {
     public class ProfileModel : PageModel
     {
+        
+
         public void OnGet()
         {
         }

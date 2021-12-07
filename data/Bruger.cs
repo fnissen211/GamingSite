@@ -10,6 +10,8 @@ namespace GamingSiteProject.data
         private String navn;
         private String kodeord;
 
+        public string ProfilePicture { get; set; }
+
         public Bruger()
         {
         }
