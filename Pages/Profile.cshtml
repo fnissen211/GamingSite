@@ -5,10 +5,14 @@
     ViewData["Title"] = "Profile";
     Layout = "Shared/_LayoutUser";
 }
+
 <body>
 <div class="container">
     <header class="h1" align="center">Profile: xx</header>
-    <img/>
+    <div class="figure-img">
+        <img />
+    </div>
+    
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -16,12 +20,24 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="container" align="center">
-                <button type="button">Posts</button>
-                <button type="button">My Lists</button>
-                <button type="button">Followers</button>
-                <button type="button">Following</button>
+                <button id="posts" class="btn-secondary" onclick="">Posts</button>
+                
+                <button class="btn-secondary" onclick="" type="button">My Lists</button>
+
+                <button class="btn-secondary" onclick="" type="button">Followers</button>
+
+                <button id="" class="btn-secondary" onclick="" type="button">Following</button>
+                
             </div>
         </div>
     </nav>
 </div>
+
 </body>
+
+<script>
+    function userPosts() {
+        
+    }
+
+</script>
