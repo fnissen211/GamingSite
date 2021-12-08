@@ -26,6 +26,10 @@ body {
     background-color: #0D0D15;
 }
 
+.profile-navbar-bg {
+    background-color: #25252C;
+}
+
 nav a {
     color: rgb(135, 135, 135);
     font-family: Readex Pro, sans-serif;
@@ -46,8 +50,4 @@ nav a {
     color: #fff;
     background-color: #003D6A;
     border-color: #001121;
-}
-
-.alert-danger-own {
-    color: #721c24;
 }
