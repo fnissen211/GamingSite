@@ -1,37 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using GamingSiteProject.data;
+using System.Text.Json.Serialization;
 
 namespace GamingSiteProject.services
 {
-    public class BrugerListe : IBrugerListe
+    public class BrugerListe:IBrugerListe
     {
-        private List<Bruger> _bruger = null;
+
+        private string _filename = @"data\Users.json";
+        public List<Bruger> Bruger { get; private set; }
 
         public BrugerListe()
         {
-            if (_bruger == null)
+            using(var file = File.OpenText(_filename))
             {
-                _bruger = new List<Bruger>();
-                _bruger.Add(new Bruger(0,"Mads", "1234", BrugerType.Administrator));
-                _bruger.Add(new Bruger(1,"Frede", "1234", BrugerType.Administrator));
-                _bruger.Add(new Bruger(2,"Peter", "1234", BrugerType.Bruger));
-                _bruger.Add(new Bruger(3,"Jakob", "1234", BrugerType.Bruger));
-
+                Bruger = JsonSerializer.Deserialize<List<Bruger>>(file.ReadToEnd());
             }
         }
 
-        public List<Bruger> Bruger
-        {
-            get => _bruger;
-           
-        }
 
         public void AddBruger(Bruger bruger)
         {
-            _bruger.Add(bruger);
+            Bruger.Add(bruger);
+            SaveToJson();
+        }
+
+        private void SaveToJson()
+        {
+            using (var file  = File.OpenWrite(_filename))
+            {
+                var writer = new Utf8JsonWriter(file, new JsonWriterOptions());
+                JsonSerializer.Serialize(writer, Bruger);
+            }
+        }
+
+        public bool CheckBruger(Bruger bruger)
+        {
+            if (bruger == null)
+            {
+                return false;
+            }
+
+            foreach (var xx in Bruger)
+            {
+                if (xx.Navn == bruger.Navn &&
+                    xx.Kodeord == bruger.Kodeord)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

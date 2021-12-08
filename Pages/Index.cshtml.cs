@@ -18,7 +18,9 @@ namespace GamingSiteProject.Pages
         private Bruger _bruger;
         private IBrugerListe _brugerListe;
         
+        public string FejlTekst;
         
+
 
         public Bruger Bruger
         {
@@ -45,15 +47,17 @@ namespace GamingSiteProject.Pages
                 return Page();
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(Bruger bruger)
         {
-            if (!ModelState.IsValid)
+            var result = _brugerListe.CheckBruger(bruger);
+            if (result)
             {
-                return Page();
+                return RedirectToPage("/Startside");
             }
             else
             {
-                return RedirectToPage("/Startside");
+                FejlTekst = "Du findes ikke i systemet. Prøv igen.";
+                return Page();
             }
         }
     }

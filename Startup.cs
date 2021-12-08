@@ -28,7 +28,7 @@ namespace GamingSiteProject
         {
             services.AddRazorPages();
 
-            services.AddSingleton<IBrugerListe, BrugerListeJson>();
+            services.AddSingleton<IBrugerListe, BrugerListe>();
 
             services.AddSingleton<Bruger>();
 
