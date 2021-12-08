@@ -37,7 +37,10 @@ namespace GamingSiteProject.Pages
         public IActionResult OnGet()
         {
             // _brugerListe = new BrugerListe();
-            return Page();
+            
+                return Page();
+            
+            
         }
     }
 }

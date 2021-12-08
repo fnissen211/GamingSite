@@ -40,7 +40,7 @@ namespace GamingSiteProject.Pages.Brugere
             }
 
             _brugerListe.AddBruger(Bruger);
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Startside");
         }
     }
 }
