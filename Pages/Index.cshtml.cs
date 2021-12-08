@@ -7,6 +7,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using GamingSiteProject.data;
 using GamingSiteProject.services;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace GamingSiteProject.Pages
 {
@@ -15,6 +17,8 @@ namespace GamingSiteProject.Pages
         private readonly ILogger<IndexModel> _logger;
         private Bruger _bruger;
         private IBrugerListe _brugerListe;
+        
+        
 
         public Bruger Bruger
         {
@@ -39,8 +43,18 @@ namespace GamingSiteProject.Pages
             // _brugerListe = new BrugerListe();
             
                 return Page();
-            
-            
+        }
+
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            else
+            {
+                return RedirectToPage("/Startside");
+            }
         }
     }
 }

@@ -6,22 +6,30 @@
 }
 
 <body>
-<div class="container" align="center" style="align-items: stretch">
-    <header class="h1">GamingSite</header>
-    <p>
-        @Html.TextBox("BrugerID", null, new {@class = "m-auto", @placeholder = "BrugerID"})
-    </p>
-    <p>
-        @Html.TextBox("Password", null, new {@class = "m-auto", @placeholder = "Password"})
-    </p>
-    <p>
-        <button type="button" class="m-auto" style="border-color: black" onclick="window.location.href = '/Login'">Login</button>
-    </p>
-    <p>
-        <button type="button" class="m-auto" style="border-color: black" onclick="window.location.href = 'Brugere/OpretBruger'">Ingen Bruger?</button>
+    <div class="container" align="center">
+        <h1>Opret din bruger</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <form method="post">
+                    <div class="form-group">
+                        <label>Brugernavn</label>
+                        <input type="text" asp-for="Bruger.Navn" class="form-control" placeholder="Brugernavn" />
+                        <span asp-validation-for="Bruger.Navn" class="text-danger" style="font-size: 15px"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Kodeord</label>
 
-    </p>
-</div>
+                        <input type="text" asp-for="Bruger.Kodeord" class="form-control" placeholder="Kodeord" />
+                        <span asp-validation-for="Bruger.Kodeord" class="text-danger" style="font-size: 15px"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn btn-primary" />
+                    </div>
+                    <button type="button" class="m-auto" style="border-color: black" onclick="window.location.href = 'Brugere/OpretBruger'">Ingen Bruger?</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 <p>@Model.Bruger</p>
 
