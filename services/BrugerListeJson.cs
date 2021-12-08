@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using GamingSiteProject.data;
+using System.Text.Json.Serialization;
 
 namespace GamingSiteProject.services
 {
