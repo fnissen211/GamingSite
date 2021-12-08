@@ -30,6 +30,11 @@ namespace GamingSiteProject.services
             SaveToJson();
         }
 
+        public void AddGame(Bruger bruger)
+        {
+            Bruger.Add(bruger);
+        }
+
         private void SaveToJson()
         {
             using (var file  = File.OpenWrite(_filename))

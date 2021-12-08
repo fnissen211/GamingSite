@@ -23,7 +23,7 @@ namespace GamingSiteProject.data
         private string _navn;
         private string _kodeord;
         private BrugerType _type;
-
+        private string _gamesList;
 
 
         public Bruger()
@@ -31,12 +31,20 @@ namespace GamingSiteProject.data
 
         }
 
-        public Bruger(int id, string navn, string kodeord, BrugerType type)
+        public Bruger(int id, string navn, string kodeord, BrugerType type, string gamesList)
         {
             _id = id;
             _navn = navn;
             _kodeord = kodeord;
             _type = type;
+            _gamesList = gamesList;
+        }
+
+
+        public string GamesList
+        {
+            get => _gamesList;
+            set => _gamesList = value;
         }
 
         public int Id
@@ -69,7 +77,7 @@ namespace GamingSiteProject.data
 
         public override string ToString()
         {
-            return $"{nameof(Id)}: {Id}, {nameof(Navn)}: {Navn}, {nameof(Kodeord)}: {Kodeord}, {nameof(Type)}: {Type}";
+            return $"{nameof(Id)}: {Id}, {nameof(Navn)}: {Navn}, {nameof(Kodeord)}: {Kodeord}, {nameof(Type)}: {Type}, {nameof(GamesList)}: {GamesList}";
         }
     }
 }

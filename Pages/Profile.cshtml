@@ -8,7 +8,7 @@
 
 <body>
 <div class="container">
-    <header class="h1" align="center">Profile: xx </header>
+    <header class="h1" align="center">Profile: </header>
     <div class="figure-img">
         <img />
     </div>
@@ -37,23 +37,32 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav flex-grow-1">
                 <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-page="#">Posts</a>
+                    <a class="nav-link" asp-area="" asp-page="/Profile">Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-page="#">My Lists</a>
+                    <a class="nav-link" asp-area="" asp-page="/SpilleListe">My Lists</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-page="#">Followers</a>
+                    <a class="nav-link" asp-area="" asp-page="/Followers">Followers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-page="#">Following</a>
+                    <a class="nav-link" asp-area="" asp-page="/Following">Following</a>
                 </li>
             </ul>
         </div>
     </nav>
 </div>
+    
+<div class="container" align="center">
+    <header class="h4">My Posts</header>
+        
+
+
+</div>
 
 </body>
+
+
 
 <script>
     function userPosts() {

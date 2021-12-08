@@ -1,0 +1,42 @@
+﻿@page
+@using GamingSiteProject.data
+@model GamingSiteProject.Pages.FollowersModel
+@{
+    ViewData["Title"] = "Followers";
+    Layout = "Shared/_LayoutUser";
+}
+
+<body>
+    <div class="container">
+        <header class="h1" align="center">Profile: </header>
+        <div class="figure-img">
+            <img />
+        </div>
+        <nav class="profile-navbar-bg navbar navbar-expand-sm navbar-bg box-shadow rounded mb-3">
+            <a class="navbar-brand" href="#">TheLegend27</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Profile">Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/SpilleListe">My Lists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Followers">Followers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Following">Following</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container" align="center">
+        <header class="h4">My Followers</header>
+        
+
+
+    </div>
+</body>
