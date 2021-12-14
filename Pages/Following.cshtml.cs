@@ -6,13 +6,14 @@ using GamingSiteProject.services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace GamingSiteProject.SpilleListe
+namespace GamingSiteProject.Pages
 {
-    public class SpilleListeModel : PageModel
+    public class FollowingModel : PageModel
     {
+
         public LoggedInUser loggedinuser { get; set; }
 
-        public SpilleListeModel(LoggedInUser user)
+        public FollowingModel(LoggedInUser user)
         {
             loggedinuser = user;
         }
