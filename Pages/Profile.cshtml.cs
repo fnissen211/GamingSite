@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GamingSiteProject.data;
 using GamingSiteProject.Pages.Brugere;
+using GamingSiteProject.services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -13,20 +14,28 @@ namespace GamingSiteProject.Pages
     {
         private Bruger _bruger;
 
+        public LoggedInUser loggedinuser { get; set; }
 
+        [BindProperty]
         public Bruger Bruger
         {
             get => _bruger;
             set => _bruger = value;
         }
 
-        public ProfileModel()
+        public ProfileModel(LoggedInUser user)
         {
-            
+            loggedinuser = user;
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            if (!loggedinuser.LoggedIn)
+            {
+                return RedirectToPage("/Index");
+            }
+
+            return Page();
         }
     }
 }

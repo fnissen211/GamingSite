@@ -30,6 +30,8 @@ namespace GamingSiteProject
 
             services.AddSingleton<IBrugerListe, BrugerListe>();
 
+            services.AddSingleton<LoggedInUser, LoggedInUser>();
+
             services.AddSingleton<Bruger>();
 
         }

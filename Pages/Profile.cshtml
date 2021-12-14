@@ -4,11 +4,12 @@
 @{
     ViewData["Title"] = "Profile";
     Layout = "Shared/_LayoutUser";
+    
 }
 
 <body>
 <div class="container">
-    <header class="h1" align="center">Profile: </header>
+    <header class="h1" align="center">Profile: @Model.loggedinuser.Navn</header>
     <div class="figure-img">
         <img />
     </div>
@@ -33,7 +34,7 @@
     </nav>*@
     
     <nav class="profile-navbar-bg navbar navbar-expand-sm navbar-bg box-shadow rounded mb-3">
-        <a class="navbar-brand" href="#">TheLegend27</a>
+        <a class="navbar-brand" href="#">@ViewData["Bruger"]</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav flex-grow-1">
                 <li class="nav-item">

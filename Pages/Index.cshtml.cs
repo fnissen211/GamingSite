@@ -17,11 +17,13 @@ namespace GamingSiteProject.Pages
         private readonly ILogger<IndexModel> _logger;
         private Bruger _bruger;
         private IBrugerListe _brugerListe;
+        private LoggedInUser _loggedInUser;
         
         public string FejlTekst;
-        
 
+        public LoggedInUser loggedinuser { get => _loggedInUser; }
 
+        [BindProperty]
         public Bruger Bruger
         {
             get => _bruger;
@@ -34,10 +36,11 @@ namespace GamingSiteProject.Pages
             set => _brugerListe = value;
         }
 
-        public IndexModel(ILogger<IndexModel> logger, IBrugerListe brugerListe)
+        public IndexModel(ILogger<IndexModel> logger, IBrugerListe brugerListe, LoggedInUser loggedInUser)
         {
             _logger = logger;
             _brugerListe = brugerListe;
+            _loggedInUser = loggedInUser;
         }
 
         public IActionResult OnGet()
@@ -52,6 +55,8 @@ namespace GamingSiteProject.Pages
             var result = _brugerListe.CheckBruger(bruger);
             if (result)
             {
+                _loggedInUser.LoggedIn = true;
+                _loggedInUser.Navn = bruger.Navn;
                 return RedirectToPage("/Startside");
             }
             else
