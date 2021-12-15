@@ -40,7 +40,7 @@ namespace GamingSiteProject.Pages.Brugere
             }
 
             _brugerListe.AddBruger(Bruger);
-            ViewData["Bruger"] = Bruger;
+            
             return RedirectToPage("/Startside");
         }
     }

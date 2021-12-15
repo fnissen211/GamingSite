@@ -7,15 +7,21 @@ using GamingSiteProject.data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace GamingSiteProject.SpilleListe
+namespace GamingSiteProject.Pages
 {
-    public class SpilleListeModel : PageModel
+    public class OpretSpilleListeModel : PageModel
     {
-        public LoggedInUser loggedinuser { get; set; }
 
-        public SpilleListeModel(LoggedInUser user)
+        public LoggedInUser loggedinuser { get; set; }
+        private IBrugerListe _brugerListe;
+
+        [BindProperty]
+        public Bruger Bruger { get; set; }
+
+        public OpretSpilleListeModel(LoggedInUser user, IBrugerListe brugerListe)
         {
             loggedinuser = user;
+            _brugerListe = brugerListe;
         }
 
         public IActionResult OnGet()
@@ -24,6 +30,19 @@ namespace GamingSiteProject.SpilleListe
             {
                 return RedirectToPage("/Index");
             }
+
+            return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            if (loggedinuser.LoggedIn)
+            {
+                
+
+                return RedirectToPage("/Profile");
+            }
+
 
             return Page();
         }

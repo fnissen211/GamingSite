@@ -9,5 +9,6 @@ namespace GamingSiteProject.services
         void AddBruger(Bruger bruger);
         bool CheckBruger(Bruger bruger);
         void AddGame(Bruger bruger);
+        void UpdateGameList(Bruger bruger);
     }
 }

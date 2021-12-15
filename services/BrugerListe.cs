@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using GamingSiteProject.data;
+using GamingSiteProject.services;
 using System.Text.Json.Serialization;
 
 namespace GamingSiteProject.services
@@ -14,9 +15,12 @@ namespace GamingSiteProject.services
 
         private string _filename = @"data\Users.json";
         public List<Bruger> Bruger { get; private set; }
+        private LoggedInUser _loggedInUser;
 
-        public BrugerListe()
+        public BrugerListe(LoggedInUser loggedinuser)
         {
+            _loggedInUser = loggedinuser;
+
             using(var file = File.OpenText(_filename))
             {
                 Bruger = JsonSerializer.Deserialize<List<Bruger>>(file.ReadToEnd());
@@ -33,6 +37,12 @@ namespace GamingSiteProject.services
         public void AddGame(Bruger bruger)
         {
             Bruger.Add(bruger);
+            SaveToJson();
+        }
+
+        public void UpdateGameList(Bruger bruger)
+        {
+            throw new NotImplementedException();
         }
 
         private void SaveToJson()
@@ -62,5 +72,7 @@ namespace GamingSiteProject.services
 
             return false;
         }
+
+        
     }
 }
