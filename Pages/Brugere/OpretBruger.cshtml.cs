@@ -46,7 +46,7 @@ namespace GamingSiteProject.Pages.Brugere
 
             
             
-            return RedirectToPage("/Startside");
+            return RedirectToPage("/Index");
         }
     }
 }

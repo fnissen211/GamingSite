@@ -20,5 +20,13 @@ namespace GamingSiteProject.Startside
             
         }
 
+        public LoggedInUser loggedinuser { get; set; }
+
+
+        public StartsideModel(LoggedInUser user)
+        {
+            loggedinuser = user;
+        }
+
     }
 }
