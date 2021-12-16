@@ -48,9 +48,9 @@ namespace GamingSiteProject.Pages.Brugere
             _brugerListe.AddBruger(Bruger);
             _loggedInUser.GamesList = bruger.GamesList;
 
-
-
-            return RedirectToPage("/Startside");
+            
+            
+            return RedirectToPage("/Index");
         }
     }
 }
