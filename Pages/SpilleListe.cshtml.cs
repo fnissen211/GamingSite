@@ -15,23 +15,33 @@ namespace GamingSiteProject.SpilleListe
     {
         private LoggedInUser _loggedInUser;
 
+        private IBrugerListe _brugerListe;
+
         private Bruger _bruger;
 
         [BindProperty]
         public Bruger Bruger
         {
             get => _bruger;
-            set => _bruger = value;
+            
         }
 
- 
+        [BindProperty]
+        public IBrugerListe BrugerListe
+        {
+            get => _brugerListe;
+            set => _brugerListe = value;
+        }
+
 
         public LoggedInUser loggedinuser { get => _loggedInUser; }
 
 
-        public SpilleListeModel(LoggedInUser loggedInUser)
+        public SpilleListeModel(LoggedInUser loggedInUser, IBrugerListe brugerListe, Bruger bruger)
         {
             _loggedInUser = loggedInUser;
+            _brugerListe = brugerListe;
+            _bruger = bruger;
 
         }
 

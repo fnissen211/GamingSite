@@ -2,10 +2,12 @@
 @using GamingSiteProject.data
 @using GamingSiteProject.services
 @using GamingSiteProject.Pages
+@using System.Threading
 @model GamingSiteProject.SpilleListe.SpilleListeModel
 @{
     ViewData["Title"] = "Gamelist";
     Layout = "Shared/_LayoutUser";
+    var antal = 1;
 }
 <body>
     <div class="container">
@@ -51,8 +53,19 @@
             </tr>
 
             </thead>
-            <tbody>
-
+            <tbody> 
+                @foreach (var xx in @Model.loggedinuser.GamesList)
+                {
+                    <tr>
+                        <td>
+                            @antal
+                        </td>
+                        <td>
+                            @xx
+                        </td>
+                    </tr>
+                    antal++;
+                }
                 
 
 

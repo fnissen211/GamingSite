@@ -48,19 +48,9 @@ namespace GamingSiteProject.Pages
 
             if (loggedInUser.LoggedIn)
             {
-                //var xx = _brugerListe.Bruger;
-                //var yy = Bruger.GamesList;
 
-                //foreach (var ss in _brugerListe.Bruger)
-                //{
-                //    if (ss.Navn == loggedInUser.Navn)
-                //    {
-                //        ss.GamesList.AddRange(Bruger.GamesList);
-                //    }
-
-                //}
-                _brugerListe.AddGame(Bruger,Bruger.GamesList);
-
+                _brugerListe.AddGame(loggedInUser.Navn,Bruger.GamesList);
+                loggedInUser.GamesList.AddRange(Bruger.GamesList);
 
                 return RedirectToPage("/Profile");
             }

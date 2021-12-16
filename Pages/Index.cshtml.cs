@@ -57,7 +57,8 @@ namespace GamingSiteProject.Pages
             {
                 _loggedInUser.LoggedIn = true;
                 _loggedInUser.Navn = bruger.Navn;
-                _loggedInUser.GamesList = bruger.GamesList;
+                
+
 
 
                 return RedirectToPage("/Startside");

@@ -18,5 +18,10 @@ namespace GamingSiteProject.services
 
         public List<string> GamesList { get; set; }
 
+        public LoggedInUser()
+        {
+            GamesList = new List<string>();
+        }
+
     }
 }

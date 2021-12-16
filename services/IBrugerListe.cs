@@ -9,7 +9,7 @@ namespace GamingSiteProject.services
         
         void AddBruger(Bruger bruger);
         bool CheckBruger(Bruger bruger);
-        void AddGame(Bruger bruger, List<string> gameList);
+        void AddGame(string navn, List<string> gameList);
         void UpdateGameList(LoggedInUser loggedInUser);
     }
 }

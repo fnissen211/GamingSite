@@ -36,15 +36,13 @@ namespace GamingSiteProject.services
             SaveToJson();
         }
 
-        public void AddGame(Bruger bruger, List<string> gameList)
+        public void AddGame(string navn, List<string> gameList)
         {
-
-            
 
             foreach (var item in Bruger)
             {
 
-                if (item.Navn == bruger.Navn && item.Kodeord == bruger.Kodeord)
+                if (item.Navn == navn)
                 {
                     item.GamesList.AddRange(gameList);
                     SaveToJson();
