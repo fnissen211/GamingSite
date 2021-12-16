@@ -1,5 +1,7 @@
 ﻿@page
 @using GamingSiteProject.data
+@using GamingSiteProject.services
+@using GamingSiteProject.Pages
 @model GamingSiteProject.SpilleListe.SpilleListeModel
 @{
     ViewData["Title"] = "Gamelist";
@@ -32,10 +34,11 @@
     </div>
 
     <div class="container" align="center">
-        <header class="h4">My Gamelist</header>
+        <header class="h4">@Model.loggedinuser.Navn's Gamelist</header>
         <p>
             <a asp-page="/OpretSpilleListe">Create New</a>
         </p>
+
         <table class="table text-center">
             <thead>
             <tr>
@@ -49,38 +52,11 @@
 
             </thead>
             <tbody>
-            <tr>
-                    <td>1. </td>
-                </tr>
-                <tr>
-                    <td>2. </td>
-                </tr>
-                <tr>
-                    <td>3. </td>
-                </tr>
-                <tr>
-                    <td>4. </td>
-                </tr>
-                <tr>
-                    <td>5. </td>
-                </tr>
-                <tr>
-                    <td>6. </td>
-                </tr>
-                <tr>
-                    <td>7. </td>
-                </tr>
-                <tr>
-                    <td>8. </td>
-                </tr>
-                <tr>
-                    <td>9. </td>
-                </tr>
-                <tr>
-                    <td>10. </td>
-                </tr>
-            
-            
+
+                
+
+
+
             </tbody>
         </table>
 

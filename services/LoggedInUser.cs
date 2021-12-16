@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using GamingSiteProject.data;
 using GamingSiteProject.services;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace GamingSiteProject.services
 {
@@ -14,10 +16,7 @@ namespace GamingSiteProject.services
 
         public string Navn { get; set; }
 
-        
+        public List<string> GamesList { get; set; }
 
-        public List<Bruger> BrugerSpilleListe { get; set; }
-
-        
     }
 }

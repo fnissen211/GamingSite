@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GamingSiteProject.services;
+using GamingSiteProject.Pages.Brugere;
+
 using GamingSiteProject.data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -11,11 +13,26 @@ namespace GamingSiteProject.SpilleListe
 {
     public class SpilleListeModel : PageModel
     {
-        public LoggedInUser loggedinuser { get; set; }
+        private LoggedInUser _loggedInUser;
 
-        public SpilleListeModel(LoggedInUser user)
+        private Bruger _bruger;
+
+        [BindProperty]
+        public Bruger Bruger
         {
-            loggedinuser = user;
+            get => _bruger;
+            set => _bruger = value;
+        }
+
+ 
+
+        public LoggedInUser loggedinuser { get => _loggedInUser; }
+
+
+        public SpilleListeModel(LoggedInUser loggedInUser)
+        {
+            _loggedInUser = loggedInUser;
+
         }
 
         public IActionResult OnGet()

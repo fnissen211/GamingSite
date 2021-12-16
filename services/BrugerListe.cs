@@ -15,13 +15,14 @@ namespace GamingSiteProject.services
 
         private string _filename = @"data\Users.json";
         public List<Bruger> Bruger { get; private set; }
-        private LoggedInUser _loggedInUser;
+
+        public LoggedInUser _loggedInUser;
 
         public BrugerListe(LoggedInUser loggedinuser)
         {
             _loggedInUser = loggedinuser;
 
-            using(var file = File.OpenText(_filename))
+            using (var file = File.OpenText(_filename))
             {
                 Bruger = JsonSerializer.Deserialize<List<Bruger>>(file.ReadToEnd());
             }
@@ -31,18 +32,35 @@ namespace GamingSiteProject.services
         public void AddBruger(Bruger bruger)
         {
             Bruger.Add(bruger);
+            
             SaveToJson();
         }
 
-        public void AddGame(Bruger bruger)
+        public void AddGame(Bruger bruger, List<string> gameList)
         {
-            Bruger.Add(bruger);
-            SaveToJson();
+
+            
+
+            foreach (var item in Bruger)
+            {
+
+                if (item.Navn == bruger.Navn && item.Kodeord == bruger.Kodeord)
+                {
+                    item.GamesList.AddRange(gameList);
+                    SaveToJson();
+                }
+
+            }
+
+
         }
 
-        public void UpdateGameList(Bruger bruger)
+        public void UpdateGameList(LoggedInUser loggedInuser)
         {
-            throw new NotImplementedException();
+            var updateList = loggedInuser.GamesList;
+
+            updateList.Add(_loggedInUser.GamesList.ToString());
+            SaveToJson();
         }
 
         private void SaveToJson()
@@ -51,6 +69,9 @@ namespace GamingSiteProject.services
             {
                 var writer = new Utf8JsonWriter(file, new JsonWriterOptions());
                 JsonSerializer.Serialize(writer, Bruger);
+                
+
+
             }
         }
 
@@ -73,6 +94,10 @@ namespace GamingSiteProject.services
             return false;
         }
 
-        
+        public override string ToString()
+        {
+            return $"{nameof(Bruger)}: {Bruger}, {nameof(_loggedInUser.GamesList)}: {_loggedInUser.GamesList}";
+        }
+
     }
 }

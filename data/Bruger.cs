@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using GamingSiteProject.data;
+using GamingSiteProject.services;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
@@ -23,29 +25,23 @@ namespace GamingSiteProject.data
         private string _navn;
         private string _kodeord;
         private BrugerType _type;
-        private string _gamesList;
+        public List<string> GamesList { get; set; }
 
 
         public Bruger()
         {
-
+            
         }
 
-        public Bruger(int id, string navn, string kodeord, BrugerType type, string gamesList)
+        public Bruger(int id, string navn, string kodeord, BrugerType type, List<string> gamesList)
         {
             _id = id;
             _navn = navn;
             _kodeord = kodeord;
             _type = type;
-            _gamesList = gamesList;
+            GamesList = gamesList;
         }
 
-
-        public string GamesList
-        {
-            get => _gamesList;
-            set => _gamesList = value;
-        }
 
         public int Id
         {

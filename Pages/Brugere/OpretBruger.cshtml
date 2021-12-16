@@ -1,33 +1,53 @@
 ﻿@page
+@using System.Linq
+@using GamingSiteProject.data
+
 @model GamingSiteProject.Pages.Brugere.OpretBrugerModel
 @{
     ViewData["Title"] = "Opret din bruger";
 }
 <body style="background-color: ivory">
+<div class="container" align="center">
+    <p><img src="/logo.png" alt="..." height="200" /></p>
+    <h1 style="font-family: sans-serif">Opret din bruger</h1>
     <div class="container" align="center">
-        <p><img src="/logo.png" alt="..." height="200" /></p>
-        <h1 style="font-family: sans-serif">Opret din bruger</h1>
-        <div class="container" align="center">
-            <div class="col-md-4">
-                <form method="post">
-                    <div class="form-group">
-                        <label align="center">Brugernavn</label>
-                        <input type="text" asp-for="Bruger.Navn" class="form-control text-center" placeholder="Brugernavn" />
-                        <span asp-validation-for="Bruger.Navn" class="text-danger" style="font-size: 15px"></span>
-                    </div>
-                    <div class="form-group">
-                        <label>Kodeord</label>
+        <div class="col-md-4">
+            <form method="post">
+                <div class="form-group">
+                    <label align="center">Brugernavn</label>
+                    <input type="text" asp-for="Bruger.Navn" class="form-control text-center" placeholder="Brugernavn" />
+                    <span asp-validation-for="Bruger.Navn" class="text-danger" style="font-size: 15px"></span>
+                </div>
 
-                        <input type="text" asp-for="Bruger.Kodeord" class="form-control text-center" placeholder="Kodeord" />
-                        <span asp-validation-for="Bruger.Kodeord" class="text-danger" style="font-size: 15px"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Opret Bruger" class="btn btn-primary" />
-                    </div>
-                    <button type="button" class="btn btn-primary" onclick="window.location.href = '/Index'">Tilbage til login.</button>
-                </form>
+                <div class="form-group">
+                    <label>Kodeord</label>
 
-            </div>
+                    <input type="text" asp-for="Bruger.Kodeord" class="form-control text-center" placeholder="Kodeord" />
+                    <span asp-validation-for="Bruger.Kodeord" class="text-danger" style="font-size: 15px"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>1.</label>
+                    <input type="text" asp-for="Bruger.GamesList" class="form-control text-center" placeholder="Spil Nummer 1" />
+                    <span asp-validation-for="Bruger.GamesList" class="text-danger" style="font-size: 15px"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>2.</label>
+                    <input type="text" asp-for="Bruger.GamesList" class="form-control text-center" placeholder="Spil Nummer 1" />
+                    <span asp-validation-for="Bruger.GamesList" class="text-danger" style="font-size: 15px"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" value="Opret Bruger" class="btn btn-primary" />
+                </div>
+
+                <button type="button" class="btn btn-primary" onclick="window.location.href = '/Index'">Tilbage til login.</button>
+
+            </form>
+
         </div>
     </div>
+</div>
 </body>

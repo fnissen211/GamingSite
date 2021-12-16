@@ -6,27 +6,35 @@ using GamingSiteProject.services;
 using GamingSiteProject.data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace GamingSiteProject.Pages
 {
     public class OpretSpilleListeModel : PageModel
     {
+        
 
-        public LoggedInUser loggedinuser { get; set; }
+        public LoggedInUser loggedInUser { get; set; }
+
+
         private IBrugerListe _brugerListe;
 
         [BindProperty]
         public Bruger Bruger { get; set; }
 
+
         public OpretSpilleListeModel(LoggedInUser user, IBrugerListe brugerListe)
         {
-            loggedinuser = user;
+            loggedInUser = user;
             _brugerListe = brugerListe;
+
+
         }
 
         public IActionResult OnGet()
         {
-            if (!loggedinuser.LoggedIn)
+            if (!loggedInUser.LoggedIn)
             {
                 return RedirectToPage("/Index");
             }
@@ -34,11 +42,25 @@ namespace GamingSiteProject.Pages
             return Page();
         }
 
+        
         public IActionResult OnPost()
         {
-            if (loggedinuser.LoggedIn)
+
+            if (loggedInUser.LoggedIn)
             {
-                
+                //var xx = _brugerListe.Bruger;
+                //var yy = Bruger.GamesList;
+
+                //foreach (var ss in _brugerListe.Bruger)
+                //{
+                //    if (ss.Navn == loggedInUser.Navn)
+                //    {
+                //        ss.GamesList.AddRange(Bruger.GamesList);
+                //    }
+
+                //}
+                _brugerListe.AddGame(Bruger,Bruger.GamesList);
+
 
                 return RedirectToPage("/Profile");
             }
@@ -46,5 +68,7 @@ namespace GamingSiteProject.Pages
 
             return Page();
         }
+
+
     }
 }

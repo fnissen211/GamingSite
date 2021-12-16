@@ -1,5 +1,7 @@
 ﻿@page
 @using GamingSiteProject.data
+@using GamingSiteProject.services
+@using System.Linq
 @model GamingSiteProject.Pages.OpretSpilleListeModel
 @{
     ViewData["Title"] = "CreateGameList";
@@ -25,7 +27,7 @@
                     </div>
                    
                     <div class="form-group">
-                        <input type="submit" value="Opret Liste" onclick="" class="btn btn-primary" />
+                        <input type="submit" value="Tilføj til liste" onclick="" class="btn btn-primary" />
                     </div>
                     <button type="button" class="btn btn-primary" onclick="window.location.href = '/SpilleListe'">Annuller</button>
                 </form>
@@ -34,7 +36,11 @@
     </div>
 
 
+<script>
 
+    
+
+</script>
 
 
 </body>

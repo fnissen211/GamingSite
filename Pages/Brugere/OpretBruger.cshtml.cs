@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using GamingSiteProject.data;
 using GamingSiteProject.services;
@@ -23,7 +24,7 @@ namespace GamingSiteProject.Pages.Brugere
             return Page();
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(Bruger bruger)
         {
             if (!ModelState.IsValid)
             {
@@ -33,13 +34,17 @@ namespace GamingSiteProject.Pages.Brugere
             if (_brugerListe.Bruger.Count == 0)
             {
                 Bruger.Id = 1;
+                
             }
             else
             {
                 Bruger.Id = _brugerListe.Bruger.Max(b => b.Id) + 1;
             }
 
+            
             _brugerListe.AddBruger(Bruger);
+
+            
             
             return RedirectToPage("/Startside");
         }
